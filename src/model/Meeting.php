@@ -9,7 +9,6 @@
 namespace Itb\Model;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
-//use Mattsmithdev\PdoCrud\DatabaseManager;
 
 class Meeting extends DatabaseTable
 {
