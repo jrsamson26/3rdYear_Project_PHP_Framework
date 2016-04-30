@@ -1,0 +1,28 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+
+<h1>Process {{ successType }}</h1>
+    <p>{{ message }}</p>
+
+    {# Success links back to user CRUD #}
+    {% if successType == "add Student" %}
+        <a href="/addStudent">Add another student?</a>
+
+    {% elseif successType == "delete Student" %}
+        <a href="/removeStudent">delete another student?</a>
+
+    {% elseif successType == "update Student" %}
+        <a href="/updateStudent">update another student?</a>
+
+    {% elseif successType == "add Meeting" %}
+        <a href="/addMeeting">add another meeting?</a>
+
+    {% elseif successType == "remove Meeting" %}
+        <a href="/removeMeeting">delete another meeting?</a>
+
+    {% elseif successType == "update Meeting" %}
+        <a href="/updateMeeting">update another meeting?</a>
+
+    {%  endif %}
+{% endblock %}

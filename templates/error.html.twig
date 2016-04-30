@@ -1,0 +1,36 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+<h1>Whoops!</h1>
+
+<p class="error">
+    {{ message }}
+
+    {% if message2 %}
+        {{ message2 }}
+    {% endif %}
+</p>
+    {% if errorType == "login" %}
+        <a href="/">Back to home page</a>
+
+    {% elseif errorType == "add Student" %}
+        <a href="/addStundent">Back to add student page</a>
+
+    {% elseif errorType == "delete Student" %}
+        <a href="/removeStundent">Back to delete student page</a>
+
+    {% elseif errorType == "update Student" %}
+        <a href="/updateStundent">Back to update student page</a>
+
+    {% elseif errorType == "add Meeting" %}
+        <a href="/addMeeting">Back to add meeting page</a>
+
+    {% elseif errorType == "remove Meeting" %}
+        <a href="/removeMeeting">Back to delete meeting page</a>
+
+    {% elseif errorType == "update Meeting" %}
+        <a href="/updateMeeting">Back to update meeting page</a>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+
+    <div id = "addStudent">
+        <h1>Add Students/Users</h1>
+
+        <form action="/processAddStudent" method="post">
+            <span class = "form1">
+                <label for="username">username:</label>
+                <input type="text" title="username" name="username" placeholder="Enter username must filled in" autofocus />
+            </span>
+
+            <span class = "form2">
+                <label for="password">password:</label>
+                <input type="password" title="password" name="password"  placeholder="Enter username must filled in" autofocus />
+            </span>
+
+            <span class = "form3">
+                <label for="retypePassword">re-password:</label>
+                <input type="password" title="retypePassword" name="retypePassword"  placeholder="Enter username must filled in" autofocus />
+            </span>
+
+            <span class = "form4">
+                <label for="role">role:</label>
+                <input type="text" title="role" name="role"  placeholder="Enter username must filled in" autofocus />
+            </span>
+
+            <span class = "form5">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </span>
+        </form>
+    </div>
+    <div id = "displayStudent">
+        {% include 'listStudents.html.twig' %}
+    </div>
+
+{% endblock %}

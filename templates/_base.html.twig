@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>page title - {% block title %}{% endblock %}</title>
+    <style>
+        @import 'css/desktop.css';
+        @import 'css/styleNav.css';
+    </style>
+</head>
+
+<body>
+<div id = "wrapper">
+
+    <header><img src ="/../images/banner.jpg" /></header>
+
+    <!--If Admin logs in-->
+    {% if nav == 2 %}
+        {% include 'admin.html.twig' %}
+
+    <!--If user logs in-->
+    {% elseif nav == 1 %}
+        {% include 'user.html.twig' %}
+    {% endif %}
+
+
+{# it's for main #}
+{% block main %}
+
+{% endblock %}
+
+{% include 'footer.html.twig'%}
+</div>
+
+</body>
+</html>

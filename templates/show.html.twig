@@ -1,0 +1,21 @@
+{% extends '_base.html.twig' %}
+
+{% block title %} Show {% endblock %}
+
+{% block main %}
+    <h1>Welcome to the one Great Detective Book</h1>
+
+    <tr>
+        <th>isbn = {{ book.isbn }}</th>
+        
+        <td>
+            title = {{ book.title }}
+        </td>
+        
+        <td>
+            <img src="/images/{{ book.image }}">
+        </td>
+    </tr>
+    
+
+{% endblock %}

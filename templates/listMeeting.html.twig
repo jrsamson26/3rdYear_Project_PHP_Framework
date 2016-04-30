@@ -1,0 +1,24 @@
+{% block main %}
+
+    <table>
+        <tr>
+            <th> Meeting Id </th>
+            <th> Description </th>
+            <th> Time </th>
+            <th> Date </th>
+            <th> Approval </th>
+        </tr>
+
+        {% for meeting in meetings %}
+
+            <tr>
+                <td> {{ meeting.meetingId }}</td>
+                <td> {{ meeting.description }}</td>
+                <td> {{ meeting.time }}</td>
+                <td> {{ meeting.date }}</td>
+                <td> {{ meeting.approval }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
