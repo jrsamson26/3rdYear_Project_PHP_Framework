@@ -36,4 +36,10 @@
         {% include 'listStudents.html.twig' %}
     </div>
 
+    <div id = "logout">
+        <a href = "/logout">Log Out</a>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
 {% endblock %}

@@ -114,4 +114,23 @@ class MainController
         $templateName = 'listMeeting';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
+
+    /**
+     * Killing the session of the php
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function killSession(Request $request, Application $app)
+    {
+        $_SESSION = [];
+        session_destroy();
+
+        $argsArray = [
+            'logout' => "You have been logout"
+        ];
+
+        $templateName = 'index';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
 }
