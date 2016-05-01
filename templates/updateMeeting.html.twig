@@ -1,7 +1,16 @@
 {% extends '_base.html.twig' %}
 
 {% block main %}
+    <!--This is the log out the page-->
+    <div id = "logout">
+        <a href = "/killSession">Log Out</a>
 
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+
+    <!--This is the update meeting page-->
     <div id = "updateMeeting">
         <h1>Update Meetings</h1>
 
