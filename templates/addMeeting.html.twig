@@ -1,6 +1,7 @@
 {% extends '_base.html.twig' %}
 
 {% block main %}
+    <!--This is the log out the page-->
     <div id = "logout">
         <a href = "/killSession">Log Out</a>
 
@@ -9,10 +10,11 @@
         {% endif %}
     </div>
 
-<div id = "addMeeting">
-    <h1>Add Meetings</h1>
+    <!--This is the add meeting page-->
+    <div id = "addMeeting">
+        <h1>Add Meetings</h1>
 
-    <form action="/processAddMeeting" method="post">
+        <form action="/processAddMeeting" method="post">
 
             <span class = "form1">
                 <label for="description">Description:</label>

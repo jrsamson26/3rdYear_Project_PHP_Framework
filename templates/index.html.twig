@@ -1,11 +1,14 @@
 {% extends '_base.html.twig' %}
 
 {% block main %}
+
+    <!--This is the log out -->
     {% if logout %}
         <p>{{ logout }}</p>
 
     {% endif %}
 
+    <!--This is the log in the page-->
     <h1>Login</h1>
     <form action="/login" method="post" >
         <div>
