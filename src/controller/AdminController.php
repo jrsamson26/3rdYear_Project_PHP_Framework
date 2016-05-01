@@ -52,45 +52,65 @@ class AdminController
         $confirmPassword = filter_input(INPUT_POST, 'retypePassword', FILTER_SANITIZE_STRING);
         $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
 
-        //if the password match
-        if ($password == $confirmPassword) {
-            if ($username != null) {
-                $student = new Model\User();
-                $student->setPassword($password);
-                $student->setUsername($username);
-                $student->setRole($role);
-                Model\User::insert($student);
+        //if the username is null
+        if ($username != null)
+        {
+            //if the password match
 
+            if ($password == $confirmPassword)
+            {
+                //if the username is not in the database
+                $isNotInDatabase = Model\User::getOneByUsername($username);
+
+                if ($isNotInDatabase != true)
+                {
+                    $student = new Model\User();
+                    $student->setPassword($password);
+                    $student->setUsername($username);
+                    $student->setRole($role);
+                    Model\User::insert($student);
+
+                    $argsArray = [
+                        'message' => "Student has been added to the database",// Success message
+                        'message2' => "Student is duplicated",
+                        'nav' => $_SESSION['role'],
+                        'successType' => "add Student"
+                    ];
+                    $templateName = 'process';
+                    return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                }
+                else
+                {
+                    $argsArray = [
+                        'message' => "Error - Username is taken",// Error message
+                        'message2' => 'Please trying again',
+                        'errorType' => 'add Student'// Type of error used to give the right link back
+                    ];
+                    $templateName = 'error';
+                    return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                }
+
+
+            }//end of if statement
+            else
+            {
                 $argsArray = [
-                    'message' => "Student has been added to the database",// Success message
-                    'message2' => "Student is duplicated",
-                    'nav' => $_SESSION['role'],
-                    'successType' => "add Student"
-                ];
-                $templateName = 'process';
-                return $app['twig']->render($templateName . '.html.twig', $argsArray);
-            }
-            /*
-            if ($username == $username) {
-                $student = new Model\User();
-                $student->getOneByUsername($username);
-            }*/ else {
-                $argsArray = [
-                    'message' => "Error - username has no filled in",// Error message output the page
+                    'message' => "Error - Passwords did not mach",// Error message
                     'message2' => 'Please trying again',
-                    'errorType' => 'add Student',// redirect to the pages
+                    'errorType' => 'add Student',// Type of error used to give the right link back
                     'nav' => $_SESSION["role"]
                 ];
 
                 $templateName = 'error';
                 return $app['twig']->render($templateName . '.html.twig', $argsArray);
             }
-        }//end of if statement
-        else {
+        }
+        else
+        {
             $argsArray = [
-                'message' => "Error - Passwords did not mach",// Error message
+                'message' => "Error - username has no filled in",// Error message output the page
                 'message2' => 'Please trying again',
-                'errorType' => 'add Student',// Type of error used to give the right link back
+                'errorType' => 'add Student',// redirect to the pages
                 'nav' => $_SESSION["role"]
             ];
 

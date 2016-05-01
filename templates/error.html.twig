@@ -8,10 +8,14 @@
 
     {% if message2 %}
         {{ message2 }}
+
     {% endif %}
 </p>
     {% if errorType == "login" %}
         <a href="/">Back to home page</a>
+
+    {% elseif errorType == "register Student" %}
+        <a href ="/">Back to the log In more</a>
 
     {% elseif errorType == "add Student" %}
         <a href="/addStundent">Back to add student page</a>

@@ -1,20 +1,12 @@
 {% extends '_base.html.twig' %}
 
 {% block main %}
-    <!--This is the log out the page-->
-    <div id = "logout">
-        <a href = "/killSession">Log Out</a>
-
-        {% if message %}
-            <p>{{ message }}</p>
-        {% endif %}
-    </div>
 
     <!--This is the add student the page-->
-    <div id = "addStudent">
+    <div id = "registerStudent">
         <h1>Add Students/Users</h1>
 
-        <form action="/processAddStudent" method="post">
+        <form action="/processRegisterStudent" method="post">
             <span class = "form1">
                 <label for="username">username:</label>
                 <input type="text" title="username" name="username" placeholder="Enter username must filled in" autofocus />
@@ -41,9 +33,4 @@
             </span>
         </form>
     </div>
-    <div id = "displayStudent">
-        {% include 'listStudents.html.twig' %}
-    </div>
-
-
 {% endblock %}

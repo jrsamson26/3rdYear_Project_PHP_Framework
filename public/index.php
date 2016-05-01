@@ -17,6 +17,10 @@ $app->get('/listMeeting', 'Itb\Controller\MainController::listMeeting');
 //log out killing the session
 $app->get('/killSession', 'Itb\Controller\MainController::killSession');
 
+//register for all students/users
+$app->get('/register', 'Itb\Controller\MainController::registerStudents');
+$app->post('/processRegisterStudent', 'Itb\Controller\MainController::processRegisterStudent');
+
 //admin adding Student
 //take note get and post must be together
 $app->get('/addStudent', 'Itb\Controller\AdminController::addStudent');

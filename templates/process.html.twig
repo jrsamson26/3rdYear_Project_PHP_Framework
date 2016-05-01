@@ -6,7 +6,10 @@
     <p>{{ message }}</p>
 
     {# Success links back to user CRUD #}
-    {% if successType == "add Student" %}
+    {% if successType == "register Student" %}
+        <a href ="/">Back to the log in?</a>
+
+    {% elseif successType == "add Student" %}
         <a href="/addStudent">Add another student?</a>
 
     {% elseif successType == "delete Student" %}

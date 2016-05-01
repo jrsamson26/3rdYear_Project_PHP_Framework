@@ -133,5 +133,96 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+    /**
+     * registering the students
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function registerStudents(Request $request, Application $app)
+    {
+        $argsArray = [];
+        //calling the register files
+        $templateName = 'register';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
 
+    }
+
+    /**
+     * processing the registering the students with have no duplicate username
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function processRegisterStudent(Request $request, Application $app)
+    {
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $confirmPassword = filter_input(INPUT_POST, 'retypePassword', FILTER_SANITIZE_STRING);
+        //prompt for user to be 1 so cannot access the admin controller
+        $role = Model\User::ROLE_USER;
+
+        //if the user is empty
+        if ($username != null)
+        {
+            //if the password is equal to password confirmation
+            if ($password == $confirmPassword)
+            {
+                //if the username is not in the database
+                $isNotInDatabase = Model\User::getOneByUsername($username);
+
+                if ($isNotInDatabase != true)
+                {
+                    $student = new Model\User();
+                    $student->setUsername($username);
+                    $student->setPassword($password);
+                    $student->setRole($role);
+                    Model\User::insert($student);
+
+                    $_SESSION['role'] = $role;
+
+                    $argsArray = [
+                        'username' => $username,
+                        'message' => "The Role is set to the database user = 1.",
+                        'message2' => "Please contact an admin to change your role",
+                        'nav' => $_SESSION["role"]
+                    ];
+
+                    $templateName = 'process';
+                    return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                }
+
+                else
+                {
+                    $argsArray = [
+                        'message' => "Error - Username is taken",// Error message
+                        'message2' => 'Please trying again',
+                        'errorType' => 'register Student'// Type of error used to give the right link back
+                    ];
+                    $templateName = 'error';
+                    return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                }
+            }
+            else
+            {
+                $argsArray = [
+                    'message' => "Error - Passwords don't match!",// Error message
+                    'message2' => 'Please trying again :)',
+                    'errorType' => 'register Student'// Type of error used to give the right link back
+                ];
+                $templateName = 'error';
+                return $app['twig']->render($templateName . '.html.twig', $argsArray);
+            }
+        }
+        else
+        {
+            $argsArray = [
+                'message' => "Error - Username not filled in!",// Error message
+                'message2' => 'Please trying again :)',
+                'errorType' => 'register Student'// Type of error used to give the right link back
+            ];
+            $templateName = 'error';
+            return $app['twig']->render($templateName . '.html.twig', $argsArray);
+        }
+    }
 }
