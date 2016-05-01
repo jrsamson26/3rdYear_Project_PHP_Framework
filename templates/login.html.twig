@@ -1,9 +1,15 @@
 {% extends '_base.html.twig' %}
 
 {% block main %}
+
     <p>Welcome {{ username }}</p>
-    <a href = "/logout">Log Out</a>
+
+    <!--Killing the session-->
+    <a href = "/killSession">Log Out</a>
+
     {% if message %}
         <p>{{ message }}</p>
     {% endif %}
+
+    {% include 'footer.html.twig' %}
 {% endblock %}

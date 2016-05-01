@@ -1,5 +1,5 @@
 <?php
-namespace Itb;
+namespace Itb\Controller;
 
 class ControllerUtility
 {

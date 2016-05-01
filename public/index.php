@@ -14,6 +14,9 @@ $app->post('/login', 'Itb\Controller\MainController::processLogInAction');
 $app->get('/listStudents', 'Itb\Controller\MainController::listStudent');
 $app->get('/listMeeting', 'Itb\Controller\MainController::listMeeting');
 
+//log out killing the session
+$app->get('/killSession', 'Itb\Controller\MainController::killSession');
+
 //admin adding Student
 //take note get and post must be together
 $app->get('/addStudent', 'Itb\Controller\AdminController::addStudent');

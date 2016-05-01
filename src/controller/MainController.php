@@ -46,11 +46,10 @@ class MainController
         // action depending on login success
         if ($LoggedIn)
         {
-
+            //session start when they logged in
             $_SESSION['username'] = $username;
             $_SESSION['LoggedIn']= $LoggedIn;
             $_SESSION['role']= $isRole;
-
             $_SESSION['hasLoggedIn'] = "yes";
 
             // finding the username and password if they have match
@@ -133,4 +132,6 @@ class MainController
         $templateName = 'index';
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
+
+
 }

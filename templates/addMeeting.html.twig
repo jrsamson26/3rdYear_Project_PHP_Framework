@@ -1,6 +1,13 @@
 {% extends '_base.html.twig' %}
 
 {% block main %}
+    <div id = "logout">
+        <a href = "/killSession">Log Out</a>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
 
 <div id = "addMeeting">
     <h1>Add Meetings</h1>
