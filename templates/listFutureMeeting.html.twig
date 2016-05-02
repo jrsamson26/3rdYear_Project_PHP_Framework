@@ -1,0 +1,26 @@
+{% block main %}
+    <table>
+        <tr>
+            <th> Id </th>
+            <th> Description </th>
+            <th> Day </th>
+            <th> Time </th>
+            <th> Duration </th>
+            <th> Room </th>
+        </tr>
+
+        <!--Collecting the list of meeting-->
+        {% for futuremeeting in futuremeetings %}
+
+            <tr>
+                <td> {{ futuremeeting.id }}</td>
+                <td> {{ futuremeeting.description }}</td>
+                <td> {{ futuremeeting.day }}</td>
+                <td> {{ futuremeeting.time }}</td>
+                <td> {{ futuremeeting.duration }}</td>
+                <td> {{ futuremeeting.room }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

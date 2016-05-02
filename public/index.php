@@ -50,7 +50,8 @@ $app->get('/updateMeeting', 'Itb\Controller\MeetingController::updateMeeting');
 $app->post('/processUpdateMeeting', 'Itb\Controller\MeetingController::processUpdateMeeting');
 
 //getting the display minutes of the agenda meetings
-$app->get('/minutes', 'Itb\Controller\MeetingController::listProject');
+$app->get('/minutes', 'Itb\Controller\MeetingController::listMeetings');
+
 
 
 //I tried to implement the project but it didn't work
@@ -65,7 +66,17 @@ $app->get('/updateProject', 'Itb\Controller\ProjectController::updateProject');
 $app->post('/processUpdateProject', 'Itb\Controller\ProjectController::processUpdateProject');
 //end of project debugging
 
+//Leader add future Meeting
+$app->get('/addFutureMeeting', 'Itb\Controller\FutureMeetingController::addFutureMeeting');
+$app->post('/processAddFutureMeeting', 'Itb\Controller\FutureMeetingController::processAddFutureMeeting');
 
+//Leader remove future Meeting
+$app->get('/removeFutureMeeting', 'Itb\Controller\FutureMeetingController::removeFutureMeeting');
+$app->post('/processRemoveFutureMeeting', 'Itb\Controller\FutureMeetingController::processRemoveFutureMeeting');
+
+//Leader update future Meeting
+$app->get('/updateFutureMeeting', 'Itb\Controller\FutureMeetingController::updateFutureMeeting');
+$app->post('/processUpdateFutureMeeting', 'Itb\Controller\FutureMeetingController::processUpdateFutureMeeting');
 
 //$app['debug'] = true;
 $app->error(function (\Exception $e, $code) use ($app) {

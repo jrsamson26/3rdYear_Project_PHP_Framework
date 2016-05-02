@@ -1,0 +1,35 @@
+{% extends '_base.html.twig' %}
+
+{% block main %}
+    <!--This is the log out the page-->
+    <div id = "logout">
+        <a href = "/killSession">Log Out</a>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+
+    <!--This is the add meeting page-->
+    <div id = "addFutureMeeting">
+        <h1>Add Meetings</h1>
+
+        <form action="/processRemoveFutureMeeting" method="post">
+
+            <span class = "form1">
+                <label for="id">Id:</label>
+                <input type="text" title="id" name="id"  placeholder="Enter future meeting Id" autofocus />
+            </span>
+
+            <span class = "form5">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </span>
+        </form>
+    </div>
+
+    <div id = "displayMeeting">
+        {% include 'listFutureMeeting.html.twig' %}
+    </div>
+
+{% endblock %}

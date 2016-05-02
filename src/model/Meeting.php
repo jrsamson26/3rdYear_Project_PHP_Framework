@@ -14,6 +14,7 @@ class Meeting extends DatabaseTable
     private $description;
     private $date;
     private $time;
+    private $room;
     private $approval;
 
     /**
@@ -86,6 +87,24 @@ class Meeting extends DatabaseTable
     public function getTime()
     {
         return $this->time;
+    }
+
+    /**
+     * setting the time of the meetings
+     * @param $time
+     */
+    public function setRoom($room)
+    {
+        $this->room = $room;
+    }
+
+    /**
+     * getting the time of the meetings
+     * @return mixed
+     */
+    public function getRoom()
+    {
+        return $this->room;
     }
 
     /**

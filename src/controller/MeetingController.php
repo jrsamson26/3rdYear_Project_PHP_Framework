@@ -351,7 +351,7 @@ class MeetingController
         }
     }
 
-    public function listProject(Request $request, Application $app)
+    public function listMeetings(Request $request, Application $app)
     {
         if (isset($_SESSION['role'])) {
             $meetings = Meeting::getAll();

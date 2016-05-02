@@ -26,6 +26,8 @@
     {% elseif errorType == "update Student" %}
         <a href="/updateStundent">Back to update student page</a>
 
+    <!--=====================-->
+
     {% elseif errorType == "add Meeting" %}
         <a href="/addMeeting">Back to add meeting page</a>
 
@@ -35,9 +37,21 @@
     {% elseif errorType == "update Meeting" %}
         <a href="/updateMeeting">Back to update meeting page</a>
 
+    <!--=====================-->
+
     {% elseif errorType == "add Project" %}
         <a href="/addProject">Back to add project page</a>
 
+    <!--=====================-->
+
+    {% elseif errorType == "add Future Meeting" %}
+        <a href="/addFutureMeeting">add another meeting?</a>
+
+    {% elseif errorType == "remove Future Meeting" %}
+        <a href="/removeFutureMeeting">delete another future meeting?</a>
+
+    {% elseif errorType == "update Future Meeting" %}
+        <a href="/updateFutureMeeting">delete another future meeting?</a>
 
     {% endif %}
 
