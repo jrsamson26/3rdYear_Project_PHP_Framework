@@ -52,6 +52,10 @@ $app->post('/processUpdateMeeting', 'Itb\Controller\AdminController::processUpda
 $app->get('/addMeeting', 'Itb\Controller\LeaderController::addMeeting');
 $app->post('/processAddMeeting', 'Itb\Controller\LeaderController::processAddMeeting');
 
+//admin add project
+$app->get('/addProject', 'Itb\Controller\AdminController::addProject');
+$app->post('/processAddProject', 'Itb\Controller\AdminController::processAddProject');
+
 //$app['debug'] = true;
 $app->error(function (\Exception $e, $code) use ($app) {
     $errorController = new Itb\Controller\ErrorController();

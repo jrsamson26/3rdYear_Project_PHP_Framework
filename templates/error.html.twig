@@ -35,6 +35,15 @@
     {% elseif errorType == "update Meeting" %}
         <a href="/updateMeeting">Back to update meeting page</a>
 
+    {% elseif errorType == "add Project" %}
+        <a href="/addProject">Back to add project page</a>
+
+    {% elseif errorType == "remove Project" %}
+        <a href="/removeProject">Back to delete project page</a>
+
+    {% elseif errorType == "update Project" %}
+        <a href="/updateProject">Back to update project page</a>
+
     {% endif %}
 
 {% endblock %}

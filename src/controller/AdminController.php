@@ -337,15 +337,12 @@ class AdminController
      */
     public function processAddMeeting(Request $request, Application $app)
     {
-        //$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_NUMBER_INT);
         $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_INT);
         $approval = filter_input(INPUT_POST, 'approval', FILTER_SANITIZE_STRING);
-        /*
-        //if the meeting ID is not null
-        if($id != null)
-        {*/
+
 
             //if the description is not null
             if($description != null)
@@ -429,24 +426,11 @@ class AdminController
                 $templateName = 'error';
                 return $app['twig']->render($templateName . '.html.twig', $argsArray);
             }
-       /*} //end if the meeting ID is not null
 
-        else
-        {
-            $argsArray = [
-                'message' => "Error - meeting ID has not filled in",// Error message output the page
-                'message2' => 'Please trying again',
-                'errorType' => 'add Meeting',// redirect to the pages
-                'nav' => $_SESSION["role"]
-            ];
-
-            $templateName = 'error';
-            return $app['twig']->render($templateName . '.html.twig', $argsArray);
-        }*/
     }
 
     /**
-     * Adding the meeting
+     * Remove the meeting
      * @param Request $request
      * @param Application $app
      * @return mixed
@@ -639,6 +623,141 @@ class AdminController
                 'message' => "Error - meeting ID has not filled in",// Error message output the page
                 'message2' => 'Please trying again',
                 'errorType' => 'update Meeting',// redirect to the pages
+                'nav' => $_SESSION["role"]
+            ];
+
+            $templateName = 'error';
+            return $app['twig']->render($templateName . '.html.twig', $argsArray);
+        }
+    }
+
+
+    /**
+     * displaying the projects
+     * @return array
+     */
+    public function displayProjects()
+    {
+        $project = Model\Project::getAll();
+
+        return $project;
+    }
+
+    /**
+     * Adding the project
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function addProject(Request $request, Application $app)
+    {
+        $projects = $this->displayProjects();
+        $argsArray = [
+            'projects' => $projects,
+            'nav' => $_SESSION["role"]
+        ];
+
+        $templateName = 'addProject';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+
+    /**
+     * process Add project
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function processAddProject(Request $request, Application $app)
+    {
+        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+        $member = filter_input(INPUT_POST, 'member', FILTER_SANITIZE_NUMBER_INT);
+        $supervisor = filter_input(INPUT_POST, 'supervisor', FILTER_SANITIZE_NUMBER_INT);
+        $deadline = filter_input(INPUT_POST, 'deadline', FILTER_SANITIZE_STRING);
+
+        // if the title is not null
+        if($title != null) {
+            //if the description is not null
+            if ($description != null) {
+                //if the time is not null
+                if ($member != null) {
+                    //if the date is not null
+                    if ($supervisor != null) {
+                        //if the approval is not null
+                        if ($deadline != null) {
+                            $project = new Model\Project();
+                            $project->setTitle($title);
+                            $project->setDescription($description);
+                            $project->setMembers($member);
+                            $project->setSupervisor($supervisor);
+                            $project->setDeadline($deadline);
+                            Model\Project::insert($project);
+
+                            $argsArray = [
+                                'message' => "Project has been added to the database",// Success message
+                                'nav' => $_SESSION['role'],
+                                'successType' => "add Project"
+                            ];
+                            $templateName = 'process';
+                            return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                        } else {
+                            $argsArray = [
+                                'message' => "Error - deadline has not filled in",// Error message output the page
+                                'message2' => 'Please trying again',
+                                'errorType' => 'add Project',// redirect to the pages
+                                'nav' => $_SESSION["role"]
+                            ];
+
+                            $templateName = 'error';
+                            return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                        }
+                    } //if the date is not null
+
+                    else {
+                        $argsArray = [
+                            'message' => "Error - supervisor has not filled in",// Error message output the page
+                            'message2' => 'Please trying again',
+                            'errorType' => 'add Project',// redirect to the pages
+                            'nav' => $_SESSION["role"]
+                        ];
+
+                        $templateName = 'error';
+                        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                    }
+                } //end if the time is not null
+
+                else {
+                    $argsArray = [
+                        'message' => "Error - member has not filled in",// Error message output the page
+                        'message2' => 'Please trying again',
+                        'errorType' => 'add Project',// redirect to the pages
+                        'nav' => $_SESSION["role"]
+                    ];
+
+                    $templateName = 'error';
+                    return $app['twig']->render($templateName . '.html.twig', $argsArray);
+                }
+            } //end if the description is not null
+
+            else {
+                $argsArray = [
+                    'message' => "Error - description has not filled in",// Error message output the page
+                    'message2' => 'Please trying again',
+                    'errorType' => 'add Project',// redirect to the pages
+                    'nav' => $_SESSION["role"]
+                ];
+
+                $templateName = 'error';
+                return $app['twig']->render($templateName . '.html.twig', $argsArray);
+            }
+        }
+
+        else
+        {
+            $argsArray = [
+                'message' => "Error - title has not filled in",// Error message output the page
+                'message2' => 'Please trying again',
+                'errorType' => 'add Project',// redirect to the pages
                 'nav' => $_SESSION["role"]
             ];
 

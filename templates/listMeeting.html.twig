@@ -1,5 +1,4 @@
 {% block main %}
-
     <table>
         <tr>
             <th> Meeting Id </th>
@@ -9,10 +8,11 @@
             <th> Approval </th>
         </tr>
 
+        <!--Collecting the list of meeting-->
         {% for meeting in meetings %}
 
             <tr>
-                <td> {{ meeting.meetingId }}</td>
+                <td> {{ meeting.id }}</td>
                 <td> {{ meeting.description }}</td>
                 <td> {{ meeting.time }}</td>
                 <td> {{ meeting.date }}</td>
