@@ -92,6 +92,17 @@ $app->post('/processRemoveFutureMeeting', 'Itb\Controller\FutureMeetingControlle
 $app->get('/updateFutureMeeting', 'Itb\Controller\FutureMeetingController::updateFutureMeeting');
 $app->post('/processUpdateFutureMeeting', 'Itb\Controller\FutureMeetingController::processUpdateFutureMeeting');
 
+
+
+//Secretary update future Meeting
+//admin update meeting
+$app->get('/updateMeeting', 'Itb\Controller\MeetingController::updateMeeting');
+$app->post('/processUpdateMeeting', 'Itb\Controller\MeetingController::processUpdateMeeting');
+
+//Secretary update future Meeting
+$app->get('/updateFutureMeeting', 'Itb\Controller\FutureMeetingController::updateFutureMeeting');
+$app->post('/processUpdateFutureMeeting', 'Itb\Controller\FutureMeetingController::processUpdateFutureMeeting');
+
 //$app['debug'] = true;
 $app->error(function (\Exception $e, $code) use ($app) {
     $errorController = new Itb\Controller\ErrorController();
