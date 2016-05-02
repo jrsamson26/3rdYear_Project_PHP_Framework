@@ -791,6 +791,46 @@
         clear: both;
     }
 
+    #removeProject .form1 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #removeProject .form1 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 25%;
+        margin-right: 2%;
+    }
+
+    #removeProject .form1 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #removeProject .form5 input[type = "submit"] {
+        width: 20%;
+        border-radius: 2em;
+        margin-left: 30%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #removeProject .form5 input[type = "reset"] {
+        width: 20%;
+        border-radius: 2em;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
     #updateProject {
         width: 48%;
         border: 1px solid blueviolet;
@@ -798,6 +838,470 @@
         margin: 1%;
         float: left;
         clear: both;
+    }
+
+    #updateProject .form1 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateProject .form1 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 25%;
+        margin-right: 2%;
+    }
+
+    #updateProject .form1 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateProject .form2 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateProject .form2 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 20%;
+        margin-right: 2%;
+    }
+
+    #updateProject .form2 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateProject .form3 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateProject .form3 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 6%;
+        margin-right: 2%;
+    }
+
+    #updateProject .form3 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateProject .form4 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateProject .form4 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 13%;
+        margin-right: 2%;
+    }
+
+    #updateProject .form4 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateProject .form5 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateProject .form5 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 8%;
+        margin-right: 2%;
+    }
+
+    #updateProject .form5 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateProject .form6 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateProject .form6 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 13%;
+        margin-right: 2%;
+    }
+
+    #updateProject .form6 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateProject .form7 input[type = "submit"] {
+        width: 20%;
+        border-radius: 2em;
+        margin-left: 30%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #updateProject .form7 input[type = "reset"] {
+        width: 20%;
+        border-radius: 2em;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #addFutureMeeting {
+        width: 48%;
+        border: 1px solid blueviolet;
+        border-radius: 2em;
+        margin: 1%;
+        float: left;
+        clear: both;
+    }
+
+    #addFutureMeeting .form1 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #addFutureMeeting .form1 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 20%;
+        margin-right: 2%;
+    }
+
+    #addFutureMeeting .form1 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+
+    #addFutureMeeting .form2 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #addFutureMeeting .form2 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 20%;
+        margin-right: 15%;
+    }
+
+    #addFutureMeeting .form2 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #addFutureMeeting .form3 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #addFutureMeeting .form3 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 20%;
+        margin-right: 15%;
+    }
+
+    #addFutureMeeting .form3 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+
+    #addFutureMeeting .form4 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #addFutureMeeting .form4 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 20%;
+        margin-right: 5%;
+    }
+
+    #addFutureMeeting .form4 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #addFutureMeeting  .form5 input[type = "submit"] {
+        width: 20%;
+        border-radius: 2em;
+        margin-left: 30%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #addFutureMeeting  .form5 input[type = "reset"] {
+        width: 20%;
+        border-radius: 2em;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #deleteFutureMeeting {
+        width: 48%;
+        border: 1px solid blueviolet;
+        border-radius: 2em;
+        margin: 1%;
+        float: left;
+        clear: both;
+    }
+
+    #deleteFutureMeeting .form1 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #deleteFutureMeeting .form1 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 25%;
+        margin-right: 2%;
+    }
+
+    #deleteFutureMeeting .form1 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #deleteFutureMeeting   .form5 input[type = "submit"] {
+        width: 20%;
+        border-radius: 2em;
+        margin-left: 30%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #deleteFutureMeeting .form5 input[type = "reset"] {
+        width: 20%;
+        border-radius: 2em;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #updateFutureMeeting {
+        width: 48%;
+        border: 1px solid blueviolet;
+        border-radius: 2em;
+        margin: 1%;
+        float: left;
+        clear: both;
+    }
+
+    #updateFutureMeeting .form1 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateFutureMeeting .form1 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 25%;
+        margin-right: 2%;
+    }
+
+    #updateFutureMeeting .form1 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateFutureMeeting .form2 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateFutureMeeting .form2 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 7%;
+        margin-right: 2%;
+    }
+
+    #updateFutureMeeting .form2 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateFutureMeeting .form3 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateFutureMeeting .form3 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 20%;
+        margin-right: 2%;
+    }
+
+    #updateFutureMeeting .form3 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateFutureMeeting .form4 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateFutureMeeting .form4 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 20%;
+        margin-right: 2%;
+    }
+
+    #updateFutureMeeting .form4 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+
+    #updateFutureMeeting .form5 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateFutureMeeting .form5 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 10%;
+        margin-right: 2%;
+    }
+
+    #updateFutureMeeting .form5 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+    #updateFutureMeeting .form6 {
+        width: 100%;
+        float: left;
+        margin-top: 1%;
+    }
+
+    #updateFutureMeeting .form6 label {
+        width: 30%;
+        text-align: center;
+        font-size: 2em;
+        margin-left: 10%;
+        margin-right: 2%;
+    }
+
+    #updateFutureMeeting .form6 input {
+        width: 30%;
+        border-radius: 2em;
+        padding: 1em;
+        font-size: 14px;
+    }
+
+
+    #updateFutureMeeting .form7 input[type = "submit"] {
+        width: 20%;
+        border-radius: 2em;
+        margin-left: 30%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
+    }
+
+    #updateFutureMeeting .form7 input[type = "reset"] {
+        width: 20%;
+        border-radius: 2em;
+        padding: 2%;
+        font-size: 18px;
+        font-family: arial, san-seref;
     }
 
     #displayMeeting {
@@ -817,6 +1321,9 @@
         border-radius: 2em;
         text-align: center;
     }
+
+
+
 
 
     #displayStudent {
