@@ -10,12 +10,12 @@ $app->get('/', 'Itb\Controller\MainController::indexAction');
 //logging processing the log in actions
 $app->post('/login', 'Itb\Controller\MainController::processLogInAction');
 
+//log out killing the session
+$app->get('/killSession', 'Itb\Controller\MainController::killSession');
+
 //view the list
 $app->get('/listStudents', 'Itb\Controller\MainController::listStudent');
 $app->get('/listMeeting', 'Itb\Controller\MainController::listMeeting');
-
-//log out killing the session
-$app->get('/killSession', 'Itb\Controller\MainController::killSession');
 
 //register for all students/users
 $app->get('/register', 'Itb\Controller\MainController::registerStudents');
@@ -26,12 +26,11 @@ $app->post('/processRegisterStudent', 'Itb\Controller\MainController::processReg
 $app->get('/addStudent', 'Itb\Controller\AdminController::addStudent');
 $app->post('/processAddStudent', 'Itb\Controller\AdminController::processAddStudent');
 
-
-//delete students
+//admin delete students
 $app->get('/removeStudent', 'Itb\Controller\AdminController::removeStudent');
 $app->post('/processRemoveStudent', 'Itb\Controller\AdminController::processRemoveStudent');
 
-// update students
+//admin update students
 $app->get('/updateStudent', 'Itb\Controller\AdminController::updateStudent');
 $app->post('/processUpdateStudent', 'Itb\Controller\AdminController::processUpdateStudent');
 
@@ -41,14 +40,17 @@ $app->post('/processUpdateStudent', 'Itb\Controller\AdminController::processUpda
 $app->get('/addMeeting', 'Itb\Controller\AdminController::addMeeting');
 $app->post('/processAddMeeting', 'Itb\Controller\AdminController::processAddMeeting');
 
-//delete meeting
+//admin delete meeting
 $app->get('/removeMeeting', 'Itb\Controller\AdminController::removeMeeting');
 $app->post('/processRemoveMeeting', 'Itb\Controller\AdminController::processRemoveMeeting');
 
-//update meeting
+//admin update meeting
 $app->get('/updateMeeting', 'Itb\Controller\AdminController::updateMeeting');
 $app->post('/processUpdateMeeting', 'Itb\Controller\AdminController::processUpdateMeeting');
 
+//project leader add meeting
+$app->get('/addMeeting', 'Itb\Controller\LeaderController::addMeeting');
+$app->post('/processAddMeeting', 'Itb\Controller\LeaderController::processAddMeeting');
 
 //$app['debug'] = true;
 $app->error(function (\Exception $e, $code) use ($app) {

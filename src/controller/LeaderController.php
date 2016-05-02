@@ -13,7 +13,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
 
-class MeetingController
+class LeaderController
 {
     /**
      * displaying the students
@@ -46,7 +46,7 @@ class MeetingController
 
     public function processAddMeeting(Request $request, Application $app)
     {
-        $meetingId = filter_input(INPUT_POST, 'meetingId', FILTER_SANITIZE_STRING);
+        $meetingId = filter_input(INPUT_POST, 'Id', FILTER_SANITIZE_STRING);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_NUMBER_INT);
         $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_INT);
@@ -68,7 +68,7 @@ class MeetingController
                         if($approval != null)
                         {
                             $meeting = new Model\Meeting();
-                            $meeting->setMeetingId($meetingId);
+                            $meeting->setId($meetingId);
                             $meeting->setDescription($description);
                             $meeting->setTime($time);
                             $meeting->setDate($date);

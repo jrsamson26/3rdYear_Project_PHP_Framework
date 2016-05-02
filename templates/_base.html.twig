@@ -20,7 +20,12 @@
 
     <!--If user logs in-->
     {% elseif nav == 1 %}
-        {% include 'user.html.twig' %}
+        {% include 'student.html.twig' %}
+
+    <!--If leader logs in-->
+    {% elseif nav == 3 %}
+        {% include 'leader.html.twig' %}
+
     {% endif %}
 
 
