@@ -1,23 +1,28 @@
 {% block main %}
+
     <table>
         <tr>
             <th>Id</th>
             <th>Title</th>
-            <th>Members</th>
+            <th>Description</th>
+            <th>Member</th>
             <th>Supervisor</th>
             <th>Deadline</th>
         </tr>
-
         {% for project in projects %}
-            <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.title }}</td>
-                <td>{{ project.description }}</td>
-                <td>{{ project.member }}</td>
-                <td>{{ project.supervisor }}</td>
-                <td>{{ project.deadline }}</td>
-            </tr>
+        <tr>
+            <td>{{ project.id }}</td>
+            <td>{{ project.title }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.member }}</td>
+            <td>{{ project.supervisor }}</td>
+            <td>{{ project.deadline }}</td>
+        </tr>
         {% endfor %}
+
+
     </table>
+
+
 
 {% endblock %}

@@ -1,8 +1,6 @@
 {% extends '_base.html.twig' %}
 
-<!--I tried to implement the project but it didn't work-->
 {% block main %}
-    <!--This is the log out the page-->
     <div id = "logout">
         <a href = "/killSession">Log Out</a>
 
@@ -11,37 +9,42 @@
         {% endif %}
     </div>
 
-        <div id="">
-            <h1>Add Project</h1>
+    <div id = "addProject">
+        <h1>Add Project</h1>
 
-            <form action="/processAddProject" method="post">
-
+        <form action="/processAddProject" method="post">
+             <span class = "form1">
                 <label for="title">Title:</label>
-                <input type="text" title="title" name="title" autofocus>
+                <input type="text" title="title" name="title"  placeholder="Enter Title of the project" autofocus />
+            </span>
 
-
+            <span class = "form2">
                 <label for="description">Description:</label>
-                <textarea title="description" name="description"></textarea>
+                <input type="text" title="description" name="description"  placeholder="Enter time of description of the project" autofocus />
+            </span>
 
-                <label for="members" >Members:</label>
-                <input type="text" title="members" name="members">
+            <span class = "form3">
+                <label for="member">Member:</label>
+                <input type="text" title="member" name="member"  placeholder="Enter Member of the project involved" autofocus />
+            </span>
 
-
+            <span class = "form4">
                 <label for="supervisor">Supervisor:</label>
-                <input type="text" title="supervisor" name="supervisor">
+                <input type="text" title="supervisor" name="supervisor"  placeholder="Enter Supervisor in the projects" autofocus />
+            </span>
 
-
+            <span class = "form5">
                 <label for="deadline">Deadline:</label>
-                <input type="date" title="deadline" name="deadline">
+                <input type="date" title="deadline" name="deadline"  placeholder="Enter Supervisor in the projects" autofocus />
+            </span>
 
-
+            <span class = "form5">
                 <input type="submit" value="Submit">
                 <input type="reset" value="Reset">
-
-            </form>
-        </div>
-    <div id="displayProject">
+            </span>
+        </form>
+    </div>
+    <div id = "displayProject">
         {% include 'projectsList.html.twig' %}
     </div>
-
 {% endblock %}

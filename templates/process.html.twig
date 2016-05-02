@@ -33,6 +33,11 @@
     {% elseif successType == "add Project" %}
         <a href="/addProject">add another meeting?</a>
 
+    {% elseif successType == "remove Project" %}
+        <a href="/removeProject">delete another meeting?</a>
+
+    {% elseif successType == "update Project" %}
+        <a href="/updateProject">update another meeting?</a>
     <!--=====================-->
 
     {% elseif successType == "add Future Meeting" %}

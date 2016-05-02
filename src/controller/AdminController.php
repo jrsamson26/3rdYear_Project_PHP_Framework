@@ -230,7 +230,7 @@ class AdminController
                 //if the username is not null
                 if ($username != null) {
                     //if the user has found 1, 2, 3, 4 change the role
-                    if ($role == 1 || $role == 2) {
+                    if ($role == 1 || $role == 2 || $role == 3 || $role == 4) {
                         $student = new Model\User();
                         $student->setId($id);
                         $student->setUsername($username);

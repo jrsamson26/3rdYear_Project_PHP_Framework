@@ -3,7 +3,7 @@
 namespace Itb\Model;
 
 use Mattsmithdev\PdoCrud\DatabaseTable;
-use Mattsmithdev\PdoCrud\DatabaseManager;
+
 
 class Project extends DatabaseTable
 {
@@ -89,7 +89,7 @@ class Project extends DatabaseTable
      * gets the members in the project
      * @return mixed
      */
-    public function getMembers()
+    public function getMember()
     {
         return $this->member;
     }
@@ -97,7 +97,7 @@ class Project extends DatabaseTable
      * sets the members in the project
      * @param mixed $members
      */
-    public function setMembers($member)
+    public function setMember($member)
     {
         $this->member = $member;
     }
