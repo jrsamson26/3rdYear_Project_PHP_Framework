@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jr_sa
- * Date: 28/04/2016
- * Time: 15:21
- */
 
 namespace Itb\Model;
 

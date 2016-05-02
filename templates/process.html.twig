@@ -19,7 +19,7 @@
         <a href="/updateStudent">update another student?</a>
 
     {% elseif successType == "add Meeting" %}
-        <a href="/addMeeting">add another meeting?</a>
+        <a href="/addingMeeting">add another meeting?</a>
 
     {% elseif successType == "remove Meeting" %}
         <a href="/removeMeeting">delete another meeting?</a>
@@ -29,12 +29,6 @@
 
     {% elseif successType == "add Project" %}
         <a href="/addProject">add another meeting?</a>
-
-    {% elseif successType == "remove Project" %}
-        <a href="/removeProject">delete another meeting?</a>
-
-    {% elseif successType == "update Project" %}
-        <a href="/updateProject">update another meeting?</a>
 
     {%  endif %}
 {% endblock %}

@@ -114,6 +114,26 @@ class MainController
         return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
+
+    /**
+     * list the meetings
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function listProject(Request $request, Application $app)
+    {
+        $projects = Model\Project::getAll();
+
+        $argsArray = [
+            'projects' => $projects,
+            'nav' => $_SESSION['role']
+        ];
+
+        $templateName = 'listProjects';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+
     /**
      * Killing the session of the php
      * @param Request $request

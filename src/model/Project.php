@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jr_sa
- * Date: 02/05/2016
- * Time: 07:43
- */
 
 namespace Itb\Model;
 
@@ -14,147 +8,129 @@ use Mattsmithdev\PdoCrud\DatabaseManager;
 class Project extends DatabaseTable
 {
     /**
-     * decleration of the id
-     * @var
+     * the id of the project
+     * @var int
      */
     private $id;
-
     /**
-     * title of the project
-     * @var
+     * the title of the project
+     * @var string
      */
     private $title;
-
     /**
-     * description of the project
-     * @var
+     * the description of the project
+     * @var string
      */
     private $description;
-
     /**
-     * members who is involved
-     * @var
+     * the members involved in the project
+     * @var string
      */
     private $member;
-
     /**
-     * supervisor who is looking forward to the project
-     * @var
+     * the supervisor looking after the project
+     * @var string
      */
     private $supervisor;
-
     /**
-     * deadline of the projects
-     * @var
+     * the deadline for the project
+     * @var mixed
      */
     private $deadline;
-
     /**
-     * setting the id
-     * @param $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * getting the id
+     * gets the id of the project
      * @return mixed
      */
     public function getId()
     {
         return $this->id;
     }
-
     /**
-     * setting the title
-     * @param $title
+     * sets the id of the project
+     * @param mixed $id
      */
-    public function setTitle($title)
+    public function setId($id)
     {
-        $this->title = $title;
+        $this->id = $id;
     }
-
     /**
-     * getting the title
+     * gets the title of the project
      * @return mixed
      */
     public function getTitle()
     {
         return $this->title;
     }
-
     /**
-     * setting the description
-     * @param $description#
+     * sets the title of the project
+     * @param mixed $title
      */
-    public function setDescription($description)
+    public function setTitle($title)
     {
-        $this->description = $description;
+        $this->title = $title;
     }
-
     /**
-     * getting the description
+     * gets the description of the project
      * @return mixed
      */
     public function getDescription()
     {
         return $this->description;
     }
-
-
     /**
-     * setting the member whos is involved
-     * @param $description#
+     * sets the description of the project
+     * @param mixed $description
      */
-    public function setMembers($member)
+    public function setDescription($description)
     {
-        $this->member = $member;
+        $this->description = $description;
     }
-
     /**
-     * getting the members
+     * gets the members in the project
      * @return mixed
      */
     public function getMembers()
     {
         return $this->member;
     }
-
     /**
-     * setting the supervisor who is supervising the project
-     * @param $description#
+     * sets the members in the project
+     * @param mixed $members
      */
-    public function setSupervisor($supervisor)
+    public function setMembers($member)
     {
-        $this->supervisor = $supervisor;
+        $this->member = $member;
     }
-
     /**
-     * getting the supervisor who is supervising the project
+     * gets the supervisor in the project
      * @return mixed
      */
     public function getSupervisor()
     {
         return $this->supervisor;
     }
-
     /**
-     * setting the deadline of the project
-     * @param $description#
+     * sets the supervisor in the project
+     * @param mixed $supervisor
      */
-    public function setDeadline($deadline)
+    public function setSupervisor($supervisor)
     {
-        $this->deadline = $deadline;
+        $this->supervisor = $supervisor;
     }
-
     /**
-     * getting the deadline of the project
+     * gets the deadline of the project
      * @return mixed
      */
     public function getDeadline()
     {
         return $this->deadline;
+    }
+    /**
+     * sets the deadline of the project
+     * @param mixed $deadline
+     */
+    public function setDeadline($deadline)
+    {
+        $this->deadline = $deadline;
     }
 }
